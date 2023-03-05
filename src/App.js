@@ -1,9 +1,21 @@
 import React from 'react';
-import CategoryContainer from './components/category/CategoryContainer';
-import { categories } from './util/constants';
+import Home from './routes/Home';
+import Navigation from './routes/Navigation';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
-    return <CategoryContainer categories={categories} />;
+    return (
+        <Routes>
+            <Route
+                path='/'
+                element={<Navigation />}
+            >
+                <Route
+                    index
+                    element={<Home />}
+                />
+            </Route>
+        </Routes>
+    );
 }
-
 export default App;
