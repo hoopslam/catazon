@@ -23,7 +23,7 @@
     }
     .nav-link {
         padding: 16px;
-        color: rgb(175, 114, 0);
+        color: black;
 
         span {
             padding: 10px 15px;
@@ -36,7 +36,7 @@
 
             &::before {
                 content: '';
-                background-color: rgb(175, 114, 0);
+                background-color: #ff9800;
                 border-radius: 0 0 4px 4px;
                 bottom: -6px;
                 height: 2px;

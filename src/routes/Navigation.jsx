@@ -2,11 +2,14 @@ import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import './navigation.styles.scss';
 import { UserContext } from '../contexts/UserContext';
+import { CartContext } from '../contexts/CartContext';
 import { signOutUser } from '../utils/firebase/firebase.utils';
+import CartIcon from '../components/cart/CartIcon';
+import CartDropdown from '../components/cart/CartDropdown';
 
 function Navigation() {
     const { currentUser } = useContext(UserContext);
-    console.log(currentUser);
+    const { isCartOpen, setIsCartOpen } = useContext(CartContext);
 
     return (
         <>
@@ -40,7 +43,9 @@ function Navigation() {
                             <span>Sign In</span>
                         </Link>
                     )}
+                    <CartIcon onClick={() => setIsCartOpen(!isCartOpen)} />
                 </div>
+                {isCartOpen && <CartDropdown />}
             </nav>
             <Outlet />
         </>
