@@ -30,7 +30,7 @@ function SignInForm() {
         event.preventDefault();
 
         try {
-            const { user } = await signInUserWithEmail(email, password);
+            await signInUserWithEmail(email, password);
             setFormFields(defaultFormFields);
         } catch (error) {
             switch (error.code) {

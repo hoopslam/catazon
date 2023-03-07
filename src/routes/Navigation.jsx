@@ -45,7 +45,15 @@ function Navigation() {
                     )}
                     <CartIcon onClick={() => setIsCartOpen(!isCartOpen)} />
                 </div>
-                {isCartOpen && <CartDropdown />}
+                {isCartOpen && (
+                    <>
+                        <div
+                            className='overlay'
+                            onClick={() => setIsCartOpen(false)}
+                        />
+                        <CartDropdown />
+                    </>
+                )}
             </nav>
             <Outlet />
         </>

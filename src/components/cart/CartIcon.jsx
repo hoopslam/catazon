@@ -11,7 +11,12 @@ function CartIcon({ onClick }) {
             onClick={onClick}
         >
             <AiOutlineShoppingCart className='shopping-icon' />
-            <span className='item-count'>{cartItems.length}</span>
+            <span className='item-count'>
+                {cartItems.reduce(
+                    (acc, cartItem) => acc + cartItem.quantity,
+                    0
+                )}
+            </span>
         </div>
     );
 }

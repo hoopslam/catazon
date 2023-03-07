@@ -7,10 +7,10 @@
     line-height: 50px;
     padding: 0 35px 0 35px;
     font-size: 15px;
-    background-color: rgb(175, 114, 0);
+    background-color: #ffc107;
     color: white;
     text-transform: uppercase;
-    font-weight: bolder;
+    font-weight: bold;
     border: none;
     cursor: pointer;
     display: flex;
@@ -18,7 +18,7 @@
 
     &:hover {
         background-color: white;
-        color: rgb(175, 114, 0);
+        color: #ffc107;
         border: 1px solid rgb(175, 114, 0);
     }
 
@@ -28,6 +28,28 @@
 
         &:hover {
             background-color: #357ae8;
+            border: none;
+        }
+    }
+
+    .orange {
+        background-color: #ffc107;
+        color: white;
+
+        &:hover {
+            background-color: #ffc107;
+            border: none;
+        }
+    }
+
+    &.orange-inverted {
+        background-color: white;
+        color: #ffc107;
+        border: 1px solid #ffc107;
+
+        &:hover {
+            background-color: #ffc107;
+            color: white;
             border: none;
         }
     }
