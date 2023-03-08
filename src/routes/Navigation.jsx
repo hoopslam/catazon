@@ -6,6 +6,7 @@ import { CartContext } from '../contexts/CartContext';
 import { signOutUser } from '../utils/firebase/firebase.utils';
 import CartIcon from '../components/cart/CartIcon';
 import CartDropdown from '../components/cart/CartDropdown';
+import CartDropdownOverlay from '../components/cart/CartDropdownOverlay';
 
 function Navigation() {
     const { currentUser } = useContext(UserContext);
@@ -44,16 +45,12 @@ function Navigation() {
                         </Link>
                     )}
                     <CartIcon onClick={() => setIsCartOpen(!isCartOpen)} />
+                    <CartDropdown isOpen={isCartOpen} />
                 </div>
-                {isCartOpen && (
-                    <>
-                        <div
-                            className='overlay'
-                            onClick={() => setIsCartOpen(false)}
-                        />
-                        <CartDropdown />
-                    </>
-                )}
+                <CartDropdownOverlay
+                    isOpen={isCartOpen}
+                    onClick={() => setIsCartOpen(false)}
+                />
             </nav>
             <Outlet />
         </>

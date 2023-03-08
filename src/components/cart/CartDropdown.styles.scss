@@ -7,13 +7,12 @@
     padding: 20px;
     background-color: white;
     box-shadow: 1px 4px 6px black;
-    color: white;
     font-weight: bold;
     font-size: 1.2rem;
     border-radius: 12px;
     font-family: 'Nanum Pen Script', cursive;
-    top: 100px;
-    right: 44px;
+    top: 70px;
+    right: 0px;
     z-index: 10;
 
     .empty-message {
@@ -32,6 +31,10 @@
         width: 24px;
         height: 24px;
         margin: auto;
+    }
+
+    p {
+        text-align: center;
     }
 
     button {
