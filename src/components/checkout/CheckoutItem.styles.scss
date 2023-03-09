@@ -14,6 +14,9 @@
         margin: auto;
         width: 24px;
         height: 24px;
+    }
+
+    .remove-button-container {
         cursor: pointer;
     }
 
@@ -40,6 +43,7 @@
 
     .change-quantity {
         cursor: pointer;
+        padding: 2px 20px;
     }
 
     img {

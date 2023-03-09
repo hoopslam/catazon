@@ -14,9 +14,9 @@ function ProductCard({ product }) {
                 src={imageUrl}
                 alt={name}
             />
-            <div className='footer'>
+            <div className='product-footer'>
                 <span className='name'>{name}</span>
-                <span className='price'>{price}</span>
+                <span className='price'>{`$${price}`}</span>
             </div>
             <Button onClick={addProductToCart}>Add to cart</Button>
         </div>

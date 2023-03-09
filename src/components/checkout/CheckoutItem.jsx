@@ -35,11 +35,11 @@ function CheckoutItem({ cartItem }) {
                     -
                 </span>
             </div>
-            <div className='remove-button-container interactive'>
-                <BiTrash
-                    className='remove-button'
-                    onClick={() => removeItemFromCart(cartItem)}
-                />
+            <div
+                className='remove-button-container interactive'
+                onClick={() => removeItemFromCart(cartItem)}
+            >
+                <BiTrash className='remove-button' />
             </div>
         </div>
     );
