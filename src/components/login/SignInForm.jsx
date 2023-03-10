@@ -7,6 +7,7 @@ import Button from '../button/Button';
 import FormInput from './FormInput';
 import './SignInForm.styles.scss';
 import { FcGoogle } from 'react-icons/fc';
+import { useNavigate } from 'react-router-dom';
 
 const defaultFormFields = {
     email: '',
@@ -16,6 +17,7 @@ const defaultFormFields = {
 function SignInForm() {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { email, password } = formFields;
+    const navigate = useNavigate();
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -26,12 +28,23 @@ function SignInForm() {
         });
     };
 
+    const handleGoogleSignIn = async () => {
+        try {
+            await signInWithGooglePopup();
+            setFormFields(defaultFormFields);
+            navigate('/');
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         try {
             await signInUserWithEmail(email, password);
             setFormFields(defaultFormFields);
+            navigate('/');
         } catch (error) {
             switch (error.code) {
                 case 'auth/wrong-password':
@@ -77,7 +90,7 @@ function SignInForm() {
                     <Button
                         type='button'
                         color='inverted'
-                        onClick={signInWithGooglePopup}
+                        onClick={handleGoogleSignIn}
                     >
                         <FcGoogle
                             style={{

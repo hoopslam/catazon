@@ -58,6 +58,10 @@ export const CartProvider = ({ children }) => {
         setCartItems(decrementCartItem(cartItems, productToDecrement));
     };
 
+    const clearCart = () => {
+        setCartItems([]);
+    };
+
     const value = {
         isCartOpen,
         cartItems,
@@ -65,6 +69,7 @@ export const CartProvider = ({ children }) => {
         addItemToCart,
         removeItemFromCart,
         decrementItemFromCart,
+        clearCart,
     };
 
     return (

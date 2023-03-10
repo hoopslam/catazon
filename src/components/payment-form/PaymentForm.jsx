@@ -1,12 +1,14 @@
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import Button from '../button/Button';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { CartContext } from '../../contexts/CartContext';
 import FormInput from '../login/FormInput';
 import './PaymentForm.styles.scss';
 
 function PaymentForm({ amount }) {
     const [cardName, setCardName] = useState(``);
     const [isProcessingPayment, setIsProcessingPayment] = useState(false);
+    const { clearCart } = useContext(CartContext);
     const stripe = useStripe();
     const elements = useElements();
 
@@ -22,7 +24,7 @@ function PaymentForm({ amount }) {
         const response = await fetch(
             '/.netlify/functions/create-payment-intent',
             {
-                method: 'post',
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -48,6 +50,7 @@ function PaymentForm({ amount }) {
         } else {
             if (paymentResult.paymentIntent.status === 'succeeded') {
                 alert(`Payment Complete`);
+                clearCart();
             }
         }
     };
