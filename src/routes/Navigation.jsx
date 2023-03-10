@@ -7,6 +7,7 @@ import { signOutUser } from '../utils/firebase/firebase.utils';
 import CartIcon from '../components/cart/CartIcon';
 import CartDropdown from '../components/cart/CartDropdown';
 import CartDropdownOverlay from '../components/cart/CartDropdownOverlay';
+import Footer from '../components/layout/Footer';
 
 function Navigation() {
     const { currentUser } = useContext(UserContext);
@@ -26,12 +27,12 @@ function Navigation() {
                     />
                 </Link>
                 <div className='nav-links-container'>
-                    <Link
+                    {/* <Link
                         to='/shop'
                         className='nav-link'
                     >
                         <span>Shop</span>
-                    </Link>
+                    </Link> */}
                     {currentUser ? (
                         <div className='nav-link'>
                             <span onClick={signOutUser}>Sign Out</span>
@@ -53,6 +54,7 @@ function Navigation() {
                 />
             </nav>
             <Outlet />
+            <Footer />
         </>
     );
 }

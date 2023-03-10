@@ -1,4 +1,4 @@
-export const categories = [
+export const CATEGORIES = [
     {
         id: 1,
         title: 'Dry Food',
@@ -28,5 +28,23 @@ export const categories = [
         id: 6,
         title: 'Furniture',
         url: `/images/furniture1.jpg`,
+    },
+];
+
+export const SLIDE_SHOW_IMAGES = [
+    {
+        src: `/images/catday.jpg`,
+        description: `Cat Day Sale`,
+        url: `/shop`,
+    },
+    {
+        src: `/images/treat.jpg`,
+        description: `Find the purrfect treat`,
+        url: `/shop/snacks`,
+    },
+    {
+        src: `/images/toys.jpg`,
+        description: `toys sale`,
+        url: `/shop/toys`,
     },
 ];

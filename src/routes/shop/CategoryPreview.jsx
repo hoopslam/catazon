@@ -4,7 +4,6 @@ import ProductCard from '../../components/product/ProductCard';
 import { ProductContext } from '../../contexts/ProductsContext';
 import '../../routes/shop/ShopLayout.styles.scss';
 
-//TODO: Slider
 function Shop() {
     const { products } = useContext(ProductContext);
     return (
