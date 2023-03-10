@@ -10,7 +10,7 @@ function Shop() {
     return (
         <>
             {Object.keys(products).map((title) => (
-                <>
+                <React.Fragment key={title}>
                     <Link to={`/shop/${title}`}>
                         <h2 className='shop-category-title'>
                             {title.toUpperCase()}
@@ -25,7 +25,7 @@ function Shop() {
                             />
                         ))}
                     </div>
-                </>
+                </React.Fragment>
             ))}
         </>
     );

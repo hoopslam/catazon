@@ -8,13 +8,14 @@ const BUTTON_COLOR = {
     orangeInverted: `orange-inverted`,
 };
 
-function Button({ children, color = `orange`, ...rest }) {
+function Button({ children, color = `orange`, isLoading, ...rest }) {
     return (
         <button
             className={`button-container ${BUTTON_COLOR[color]}`}
+            disabled={isLoading}
             {...rest}
         >
-            {children}
+            {isLoading ? <div className='button-loading-spinner' /> : children}
         </button>
     );
 }

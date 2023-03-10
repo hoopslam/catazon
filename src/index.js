@@ -6,6 +6,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { UserProvider } from './contexts/UserContext';
 import { ProductsProvider } from './contexts/ProductsContext';
 import { CartProvider } from './contexts/CartContext';
+import { Elements } from '@stripe/react-stripe-js';
+import { stripePromise } from './utils/stripe/stripe.utils';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,7 +16,9 @@ root.render(
             <UserProvider>
                 <ProductsProvider>
                     <CartProvider>
-                        <App />
+                        <Elements stripe={stripePromise}>
+                            <App />
+                        </Elements>
                     </CartProvider>
                 </ProductsProvider>
             </UserProvider>

@@ -1,6 +1,6 @@
 import React from 'react';
 import CategoryContainer from '../components/category/CategoryContainer';
-import { categories } from '../util/constants';
+import { categories } from '../utils/constants';
 
 function Home() {
     return (
