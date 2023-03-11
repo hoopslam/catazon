@@ -1,11 +1,14 @@
 # About Catazon
 
-Catazon is the one stop online shop for all your cats needs.
+Catazon is a fully functioning E-Commerce app featuring
 
-## Built On
+-   Online shopping catalog hosted on Google Cloud
+-   User Authentication
+-   Stripe Payment Integration
 
-- React
-- Typescript
-- Firebase
-- Styled-Components
-- Redux
+## Technologies Used
+
+-   React
+-   Sass
+-   Firebase
+-   Stripe
