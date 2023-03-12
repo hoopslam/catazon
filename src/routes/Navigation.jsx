@@ -8,13 +8,15 @@ import CartIcon from '../components/cart/CartIcon';
 import CartDropdown from '../components/cart/CartDropdown';
 import CartDropdownOverlay from '../components/cart/CartDropdownOverlay';
 import Footer from '../components/layout/Footer';
+import MenuButton from '../components/navigation/MenuButton';
+import CatalogMenu from '../components/navigation/CatalogMenu';
 
 function Navigation() {
     const [isCategoryMenuOpen, setIsCategoryMenuOpen] = useState(false);
     const { currentUser } = useContext(UserContext);
     const { isCartOpen, setIsCartOpen } = useContext(CartContext);
 
-    const handleMenuIconClick = () => {
+    const toggleMenu = () => {
         setIsCategoryMenuOpen((prev) => !prev);
     };
 
@@ -22,27 +24,14 @@ function Navigation() {
         <>
             <nav className='navigation'>
                 <div className='left-navigation-container'>
-                    <div
-                        onClick={handleMenuIconClick}
-                        aria-label='hamburger menu'
-                        className='hamburger'
-                    >
-                        <div
-                            className={`bar top ${
-                                isCategoryMenuOpen ? 'active' : ''
-                            }`}
-                        ></div>
-                        <div
-                            className={`bar middle ${
-                                isCategoryMenuOpen ? 'active' : ''
-                            }`}
-                        ></div>
-                        <div
-                            className={`bar bottom ${
-                                isCategoryMenuOpen ? 'active' : ''
-                            }`}
-                        ></div>
-                    </div>
+                    <MenuButton
+                        isCategoryMenuOpen={isCategoryMenuOpen}
+                        handleMenuIconClick={toggleMenu}
+                    />
+                    <CatalogMenu
+                        isOpen={isCategoryMenuOpen}
+                        toggleMenu={toggleMenu}
+                    />
                     <div className='logo-container'>
                         <Link to='/'>
                             <img

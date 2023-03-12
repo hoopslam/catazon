@@ -11,7 +11,6 @@ function ShopCategory() {
     const [categoryProducts, setCategoryProducts] = useState(
         products[category]
     );
-    console.log(categoryProducts);
 
     useEffect(() => {
         setCategoryProducts(products[category]);
