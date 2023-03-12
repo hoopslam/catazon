@@ -3,6 +3,7 @@ import { CartContext } from '../contexts/CartContext';
 import CheckoutItem from '../components/checkout/CheckoutItem';
 import './Checkout.styles.scss';
 import PaymentForm from '../components/payment-form/PaymentForm';
+import { Link } from 'react-router-dom';
 
 function Checkout() {
     const { cartItems } = useContext(CartContext);
@@ -31,6 +32,9 @@ function Checkout() {
     return (
         <div className='checkout-container'>
             <h2>Looks like your cart's empty</h2>
+            <Link to='/shop'>
+                <h2>View Our Catalog</h2>
+            </Link>
         </div>
     );
 }

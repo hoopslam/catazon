@@ -4,11 +4,18 @@
     max-width: 1280px;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 16px;
+    border-bottom: 1px solid orange;
+
+    .left-navigation-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
 
     .logo-container {
         height: 100%;
-        width: 120px;
+        width: 80px;
     }
 
     .logo {

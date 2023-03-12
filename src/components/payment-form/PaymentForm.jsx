@@ -46,7 +46,7 @@ function PaymentForm({ amount }) {
         setIsProcessingPayment(false);
 
         if (paymentResult.error) {
-            alert(paymentResult.error);
+            alert(paymentResult.error.message);
         } else {
             if (paymentResult.paymentIntent.status === 'succeeded') {
                 alert(`Payment Complete`);
@@ -75,6 +75,7 @@ function PaymentForm({ amount }) {
                     <Button
                         color='orange-inverted'
                         isLoading={isProcessingPayment}
+                        disabled={!stripe}
                     >
                         Pay Now
                     </Button>
