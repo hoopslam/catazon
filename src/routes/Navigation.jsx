@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import './navigation.styles.scss';
 import { UserContext } from '../contexts/UserContext';
@@ -10,29 +10,50 @@ import CartDropdownOverlay from '../components/cart/CartDropdownOverlay';
 import Footer from '../components/layout/Footer';
 
 function Navigation() {
+    const [isCategoryMenuOpen, setIsCategoryMenuOpen] = useState(false);
     const { currentUser } = useContext(UserContext);
     const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+
+    const handleMenuIconClick = () => {
+        setIsCategoryMenuOpen((prev) => !prev);
+    };
 
     return (
         <>
             <nav className='navigation'>
-                <Link
-                    className='logo-container'
-                    to='/'
-                >
-                    <img
-                        src='/images/logo.png'
-                        className='logo'
-                        alt='logo'
-                    />
-                </Link>
-                <div className='nav-links-container'>
-                    {/* <Link
-                        to='/shop'
-                        className='nav-link'
+                <div className='left-navigation-container'>
+                    <div
+                        onClick={handleMenuIconClick}
+                        aria-label='hamburger menu'
+                        className='hamburger'
                     >
-                        <span>Shop</span>
-                    </Link> */}
+                        <div
+                            className={`bar top ${
+                                isCategoryMenuOpen ? 'active' : ''
+                            }`}
+                        ></div>
+                        <div
+                            className={`bar middle ${
+                                isCategoryMenuOpen ? 'active' : ''
+                            }`}
+                        ></div>
+                        <div
+                            className={`bar bottom ${
+                                isCategoryMenuOpen ? 'active' : ''
+                            }`}
+                        ></div>
+                    </div>
+                    <div className='logo-container'>
+                        <Link to='/'>
+                            <img
+                                src='/images/logo.png'
+                                className='logo'
+                                alt='logo'
+                            />
+                        </Link>
+                    </div>
+                </div>
+                <div className='nav-links-container'>
                     {currentUser ? (
                         <div className='nav-link'>
                             <span onClick={signOutUser}>Sign Out</span>
@@ -49,8 +70,11 @@ function Navigation() {
                     <CartDropdown isOpen={isCartOpen} />
                 </div>
                 <CartDropdownOverlay
-                    isOpen={isCartOpen}
-                    onClick={() => setIsCartOpen(false)}
+                    isOpen={isCartOpen || isCategoryMenuOpen}
+                    onClick={() => {
+                        setIsCartOpen(false);
+                        setIsCategoryMenuOpen(false);
+                    }}
                 />
             </nav>
             <Outlet />
