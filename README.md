@@ -1,14 +1,26 @@
-# About Catazon
+# About Catazon 🚀
 
-Catazon is a fully functioning E-Commerce app featuring
+Catazon is your friendly one stop shop for all your cat's needs! This is a full E-Commerce build with user authentication, shop catalog hosted on a cloud database, fully functioning shopping cart with a checkout system, and Stripe payment integration.
 
--   Online shopping catalog hosted on Google Cloud
--   User Authentication
--   Stripe Payment Integration
+## Live Site
 
-## Technologies Used
+Visit Catazon: [Catazon](https://startling-melba-a51cc6.netlify.app/).
+
+## 🛠️ Technologies Used
 
 -   React
--   Sass
 -   Firebase
+-   React Router Dom
+-   SCSS
 -   Stripe
+
+## 📝 Features
+
+-   Google Login and Authentication
+-   A cat products shopping catalog stored on Google Cloud
+-   Shopping Cart and Checkout integration
+-   Payment system
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
