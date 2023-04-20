@@ -1,5 +1,7 @@
 # About Catazon 🚀
 
+To view the mobile app repo, click [here](https://github.com/hoopslam/catazon_mobile).
+
 Catazon is your friendly one stop shop for all your cat's needs! This is a full E-Commerce build with user authentication, shop catalog hosted on a cloud database, fully functioning shopping cart with a checkout system, and Stripe payment integration.
 
 ## Live Site
