@@ -18,7 +18,7 @@ function ShopCategory() {
     return (
         <>
             {categoryProducts ? (
-                <>
+                <div className='productCatContainer'>
                     <h2 className='shop-category-title'>
                         {category.toUpperCase()}
                     </h2>
@@ -30,7 +30,7 @@ function ShopCategory() {
                             />
                         ))}
                     </div>
-                </>
+                </div>
             ) : (
                 <BallTriangle
                     height={100}
