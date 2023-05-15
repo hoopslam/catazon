@@ -2,9 +2,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
 }
-
+.home-inner-container {
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .slider-container {
     width: 80%;
     margin: 12px auto 48px;

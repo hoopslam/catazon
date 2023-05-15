@@ -18,19 +18,21 @@ function Home() {
     };
     return (
         <div className='home-container'>
-            <div className='slider-container'>
-                <Slider {...settings}>
-                    {SLIDE_SHOW_IMAGES.map(({ src, description, url }) => (
-                        <img
-                            src={src}
-                            alt={description}
-                        />
-                    ))}
-                </Slider>
-            </div>
+            <div className='home-inner-container'>
+                <div className='slider-container'>
+                    <Slider {...settings}>
+                        {SLIDE_SHOW_IMAGES.map(({ src, description, url }) => (
+                            <img
+                                src={src}
+                                alt={description}
+                            />
+                        ))}
+                    </Slider>
+                </div>
 
-            <CategoryContainer categories={CATEGORIES} />
-            <CategoryPreview />
+                <CategoryContainer categories={CATEGORIES} />
+                <CategoryPreview />
+            </div>
         </div>
     );
 }
