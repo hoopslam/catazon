@@ -1,10 +1,11 @@
 .navigation {
     width: 100%;
     display: flex;
-    max-width: 1280px;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid orange;
+    background-color: orange;
+    font-family: 'Poppins', sans-serif;
+    color: white;
 
     .left-navigation-container {
         display: flex;
@@ -13,13 +14,13 @@
         position: relative;
     }
 
-    .logo-container {
-        height: 100%;
-        width: 80px;
-    }
-
     .logo {
-        width: 100%;
+        font-family: 'Chewy', cursive;
+        font-size: 3rem;
+        margin: 12px;
+        @media screen and (max-width: 600px) {
+            font-size: 1.5rem;
+        }
     }
 
     .nav-links-container {
@@ -30,14 +31,17 @@
         position: relative;
     }
     .nav-link {
-        padding: 16px;
-        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        margin: 0 12px;
 
         span {
             padding: 10px 15px;
             cursor: pointer;
-            font-size: 2rem;
-            font-family: 'Nanum Pen Script', cursive;
+            font-size: 1.3rem;
+            font-weight: 600;
             position: relative;
             padding: 2px 0;
             white-space: nowrap;
@@ -59,6 +63,11 @@
                 width: auto;
             }
         }
+        .nav-text {
+            @media screen and (max-width: 600px) {
+                display: none;
+            }
+        }
         &:hover {
             span::before {
                 transform: scaleX(1);
@@ -66,6 +75,12 @@
                 opacity: 1;
             }
         }
+    }
+    .user-icon {
+        width: 32px;
+        height: 32px;
+        margin: auto;
+        color: white;
     }
 
     @media screen and (max-width: 600px) {

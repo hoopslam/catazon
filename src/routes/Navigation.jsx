@@ -10,11 +10,14 @@ import CartDropdownOverlay from '../components/cart/CartDropdownOverlay';
 import Footer from '../components/layout/Footer';
 import MenuButton from '../components/navigation/MenuButton';
 import CatalogMenu from '../components/navigation/CatalogMenu';
+import { FaUserCircle } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 function Navigation() {
     const [isCategoryMenuOpen, setIsCategoryMenuOpen] = useState(false);
     const { currentUser } = useContext(UserContext);
     const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+    const navigate = useNavigate();
 
     const toggleMenu = () => {
         setIsCategoryMenuOpen((prev) => !prev);
@@ -32,30 +35,39 @@ function Navigation() {
                         isOpen={isCategoryMenuOpen}
                         toggleMenu={toggleMenu}
                     />
-                    <div className='logo-container'>
-                        <Link to='/'>
-                            <img
-                                src='/images/logo.png'
-                                className='logo'
-                                alt='logo'
-                            />
-                        </Link>
-                    </div>
+                    <h2
+                        className='logo'
+                        onClick={() => navigate('/')}
+                    >
+                        Catazon
+                    </h2>
                 </div>
                 <div className='nav-links-container'>
-                    {currentUser ? (
-                        <div className='nav-link'>
-                            <span onClick={signOutUser}>Sign Out</span>
-                        </div>
-                    ) : (
-                        <Link
-                            to='/authentication'
-                            className='nav-link'
-                        >
-                            <span>Sign In</span>
-                        </Link>
-                    )}
-                    <CartIcon onClick={() => setIsCartOpen(!isCartOpen)} />
+                    <div className='nav-link'>
+                        <FaUserCircle className='user-icon' />
+                        {currentUser ? (
+                            <span
+                                className='nav-text'
+                                onClick={signOutUser}
+                            >
+                                sign out
+                            </span>
+                        ) : (
+                            <Link
+                                to='/authentication'
+                                className='nav-link'
+                            >
+                                <span className='nav-text'>sign in</span>
+                            </Link>
+                        )}
+                    </div>
+                    <div
+                        className='nav-link'
+                        onClick={() => setIsCartOpen(!isCartOpen)}
+                    >
+                        <CartIcon />
+                        <span className='nav-text'>cart</span>
+                    </div>
                     <CartDropdown isOpen={isCartOpen} />
                 </div>
                 <CartDropdownOverlay
