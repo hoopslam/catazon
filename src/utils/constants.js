@@ -33,17 +33,17 @@ export const CATEGORIES = [
 
 export const SLIDE_SHOW_IMAGES = [
     {
-        src: `/images/catday.jpg`,
-        description: `Cat Day Sale`,
-        url: `/shop`,
-    },
-    {
-        src: `/images/treat.jpg`,
+        src: `/images/header1.jpg`,
         description: `Find the purrfect treat`,
         url: `/shop/snacks`,
     },
     {
-        src: `/images/toys.jpg`,
+        src: `/images/header0.jpg`,
+        description: `Cat Day Sale`,
+        url: `/shop`,
+    },
+    {
+        src: `/images/header2.jpg`,
         description: `toys sale`,
         url: `/shop/toys`,
     },
