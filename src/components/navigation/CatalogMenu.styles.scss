@@ -1,13 +1,17 @@
 .catalog-menu-container {
     position: absolute;
-    top: 0;
+    top: 86.5px;
     left: 0;
     width: 250px;
     background-color: white;
     transition: all 0.5s ease-in-out;
-    transform: translateY(-100%);
+    transform: translateX(-100%);
     z-index: 99;
     opacity: 0;
+
+    @media screen and (max-width: 600px) {
+        top: 70px;
+    }
 
     .catalog-list-container {
         list-style-type: none;
@@ -31,9 +35,13 @@
     }
 
     &.open {
-        top: 70px;
-        transform: translateY(0);
+        top: 86.5px;
+        transform: translateX(0);
         box-shadow: 0 2px 4px gray;
         opacity: 1;
+
+        @media screen and (max-width: 600px) {
+            top: 70px;
+        }
     }
 }
