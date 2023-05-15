@@ -14,9 +14,7 @@ function CategoryItem({ url, title }) {
                     backgroundImage: `url(${url})`,
                 }}
             />
-            <div className='category-body-container'>
-                <h2>{title}</h2>
-            </div>
+            <h2>{title}</h2>
         </Link>
     );
 }

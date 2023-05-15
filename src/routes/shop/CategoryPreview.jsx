@@ -7,7 +7,8 @@ import '../../routes/shop/ShopLayout.styles.scss';
 function Shop() {
     const { products } = useContext(ProductContext);
     return (
-        <>
+        <div className='category-preview-container'>
+            <h2>Best Selling Products by Category</h2>
             {Object.keys(products).map((title) => (
                 <React.Fragment key={title}>
                     <Link to={`/shop/${title}`}>
@@ -26,7 +27,7 @@ function Shop() {
                     </div>
                 </React.Fragment>
             ))}
-        </>
+        </div>
     );
 }
 
